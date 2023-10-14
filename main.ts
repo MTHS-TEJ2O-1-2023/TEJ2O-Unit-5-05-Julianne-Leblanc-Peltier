@@ -5,6 +5,7 @@
  * This program turns on and changes the colors of the RobotBit
 */
 
+// variables
 let neopixelStrip: neopixel.Strip = null
 
 // cleanup
@@ -19,23 +20,24 @@ basic.showIcon(IconNames.Happy)
 
 input.onButtonPressed(Button.A, function () {
   basic.showIcon(IconNames.Happy)
-  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
-  basic.pause(1000)
-  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Yellow))
-  basic.pause(1000)
-  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
-  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Red))
-  basic.pause(1000)
+  // turns on Green light
+  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+  neopixelStrip.show()
+  basic.pause(3000)
   neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
   neopixelStrip.show()
-})
 
-input.onButtonPressed(Button.B, function () {
-  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
-  neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
-  neopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
+  // turns on Yellow light
+  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Yellow))
   neopixelStrip.show()
-  basic.showIcon(IconNames.Happy)
+  basic.pause(2000)
+  neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.show()
+
+  // turns on Red light
+  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
+  neopixelStrip.show()
+  basic.pause(1000)
+  neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.show()
 })
