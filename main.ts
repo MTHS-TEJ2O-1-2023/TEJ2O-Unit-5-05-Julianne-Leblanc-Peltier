@@ -19,22 +19,25 @@ neopixelStrip.show()
 basic.showIcon(IconNames.Happy)
 
 input.onButtonPressed(Button.A, function () {
-  // show green
   basic.showIcon(IconNames.Happy)
+  // turns on Green light
   neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
   neopixelStrip.show()
   basic.pause(3000)
-
-  // ...
   neopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.show()
+
+  // turns on Yellow light
   neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Yellow))
   neopixelStrip.show()
   basic.pause(2000)
   neopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
+  neopixelStrip.show()
+
+  // turns on Red light
   neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Red))
   neopixelStrip.show()
   basic.pause(1000)
   neopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-  basic.pause(1000)
   neopixelStrip.show()
 })
